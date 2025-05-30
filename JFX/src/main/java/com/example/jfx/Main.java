@@ -1,8 +1,11 @@
 package com.example.jfx;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
 import java.util.Objects;
@@ -117,5 +120,22 @@ public class Main extends Application {
 
 		stage.setScene(scene); // Set scene. Set the scene before you show the stage, like a play.
 		stage.show(); // Show the stage
+
+		stage.setOnCloseRequest(event -> {
+			event.consume();
+			logout(stage);
+		});
+	}
+
+	public void logout(Stage stage) {
+
+		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Logout Confirmation");
+		alert.setHeaderText("Are you sure you want to logout?");
+		alert.setContentText("You will be logged out of the application.");
+
+		if (alert.showAndWait().get() == ButtonType.OK) {
+			stage.close();
+		}
 	}
 }

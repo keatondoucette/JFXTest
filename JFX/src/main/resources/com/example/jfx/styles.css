@@ -1,0 +1,12 @@
+.root {
+    -fx-background-color: "lightcoral";
+    -fx-alignment: center;
+}
+.label {
+    -fx-font-size: 20px;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill: "white";
+}
+#titleLabel {
+    -fx-font-size: 40px;
+}

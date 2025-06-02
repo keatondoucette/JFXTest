@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jfx.Scene2Controller">
    <children>
       <Button layoutX="145.0" layoutY="104.0" mnemonicParsing="false" onAction="#switchToSceneOne" text="SCene 1" />
       <Label layoutX="493.0" layoutY="274.0" text="This is scene 2" />
-      <Label fx:id="nameLabel" layoutX="83.0" layoutY="274.0" text="Label" />
-      <Button fx:id="logoutButton" layoutX="479.0" layoutY="79.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Label fx:id="nameLabel" layoutX="32.0" layoutY="108.0" text="Label" />
+      <Button fx:id="logoutButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Button fx:id="myButton" layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#displayImage" text="Button" />
+      <ImageView fx:id="myImageView" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="180.0" onMouseEntered="#displayImage" opacity="0.72" pickOnBounds="true" rotate="22.8" scaleX="-0.98">
+         <image>
+            <Image url="@test.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+         <effect>
+            <MotionBlur />
+         </effect>
+      </ImageView>
+      <Button fx:id="ageButton" layoutX="486.0" layoutY="135.0" mnemonicParsing="false" onAction="#submit" text="Button" />
+      <Label layoutX="454.0" layoutY="62.0" text="Enter Your Age:">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="myTextField" layoutX="437.0" layoutY="104.0" promptText="ex. 21" />
+      <Label fx:id="ageLabel" layoutX="454.0" layoutY="14.0" text="Welcome" />
+      <CheckBox fx:id="myCheckbox" layoutX="32.0" layoutY="353.0" mnemonicParsing="false" onAction="#change" text="ON/OFF">
+         <font>
+            <Font name="Goudy Old Style Bold" size="22.0" />
+         </font>
+      </CheckBox>
+      <Label fx:id="onOffLabel" layoutX="80.0" layoutY="291.0" text="OFF" />
+      <RadioButton fx:id="rButton1" layoutX="14.0" layoutY="238.0" mnemonicParsing="false" onAction="#getFood" text="pizza">
+         <toggleGroup>
+            <ToggleGroup fx:id="food" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rButton2" layoutX="68.0" layoutY="238.0" mnemonicParsing="false" onAction="#getFood" text="cake" toggleGroup="$food" />
+      <RadioButton fx:id="rButton3" layoutX="123.0" layoutY="238.0" mnemonicParsing="false" onAction="#getFood" text="taco" toggleGroup="$food" />
+      <Label fx:id="foodLabel" layoutX="70.0" layoutY="188.0" text="Food">
+         <font>
+            <Font name="MS UI Gothic" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="440.0" layoutY="308.0" text="Date:" />
+      <DatePicker fx:id="myDatePicker" layoutX="417.0" layoutY="341.0" onAction="#getDate" promptText="Enter a date" />
+      <Slider fx:id="mySlider" layoutX="145.0" layoutY="39.0" majorTickUnit="50.0" max="250.0" prefHeight="14.0" prefWidth="261.0" showTickLabels="true" showTickMarks="true" value="125.0" />
+      <Label fx:id="sliderLabel" layoutX="262.0" layoutY="14.0" text="Temp" />
+      <ProgressBar fx:id="myProgressbar" layoutX="300.0" layoutY="102.0" prefHeight="47.0" prefWidth="114.0" progress="0.0" />
+      <Button fx:id="progressButton" layoutX="314.0" layoutY="148.0" mnemonicParsing="false" onAction="#increaseProgress" text="Add Progress" />
+      <Label fx:id="progressLabel" layoutX="344.0" layoutY="85.0" text="Label" />
+      <Spinner fx:id="mySpinner" layoutX="430.0" layoutY="200.0" />
+      <Label fx:id="spinnerLabel" layoutX="454.0" layoutY="238.0" text="Label" />
    </children>
 </AnchorPane>

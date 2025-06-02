@@ -48,7 +48,7 @@
             <Font name="Goudy Old Style Bold" size="22.0" />
          </font>
       </CheckBox>
-      <Label fx:id="onOffLabel" layoutX="80.0" layoutY="291.0" text="OFF" />
+      <Label fx:id="onOffLabel" layoutX="83.0" layoutY="333.0" text="OFF" />
       <RadioButton fx:id="rButton1" layoutX="14.0" layoutY="238.0" mnemonicParsing="false" onAction="#getFood" text="pizza">
          <toggleGroup>
             <ToggleGroup fx:id="food" />
@@ -70,5 +70,6 @@
       <Label fx:id="progressLabel" layoutX="344.0" layoutY="85.0" text="Label" />
       <Spinner fx:id="mySpinner" layoutX="430.0" layoutY="200.0" />
       <Label fx:id="spinnerLabel" layoutX="454.0" layoutY="238.0" text="Label" />
+      <Button fx:id="fileChooser" layoutX="97.0" layoutY="296.0" mnemonicParsing="false" onAction="#chooseFile" text="Choose File" />
    </children>
 </AnchorPane>

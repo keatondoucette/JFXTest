@@ -13,7 +13,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -241,5 +244,22 @@ public class Scene2Controller implements Initializable {
 				spinnerLabel.setText(Integer.toString(currValue));
 			}
 		});
+	}
+
+	//---------------------------------------------------------------------------------------------------------
+	// Choose a file
+	@FXML
+	private Button chooseFileButton;
+
+	public void chooseFile(ActionEvent event) {
+		FileChooser fileChooser = new FileChooser();
+
+		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF File", "*pdf"));
+
+		File file = fileChooser.showOpenDialog(stage);
+
+		if (file != null) {
+			System.out.println("File selected: " + file.getAbsolutePath());
+		}
 	}
 }
